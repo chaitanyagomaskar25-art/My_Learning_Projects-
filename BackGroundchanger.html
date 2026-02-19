@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BackGround Changer</title>
+    <style>
+        body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    background-color: black;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+button {
+    margin-bottom: 40px;
+    padding: 14px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 40px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(135deg, #00f2fe, #4facfe);
+    color: #000;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+    box-shadow: 0 12px 30px rgba(79, 172, 254, 0.6);
+}
+
+button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px rgba(79, 172, 254, 0.8);
+}
+
+div {
+    width: 55%;
+    max-width: 600px;
+    padding: 60px 40px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    animation: fadeUp 0.8s ease;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    margin: 0;
+    font-size: 34px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+    </style>
+</head>
+<body>
+    <button>click me</button>
+    <div class="main">
+        <h1 class="heading">This is my first JS Project</h1>
+    </div>
+    <script src="BackGroundChanger.js"></script>
+
+</body>
+</html>

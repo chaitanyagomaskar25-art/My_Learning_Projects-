@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <style>
+       * {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f172a, #020617);
+    color: #e5e7eb;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 60px;
+    font-size: 36px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #f8fafc;
+}
+
+.calculator {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-radius: 22px;
+    width: 420px;
+    max-width: 90%;
+    margin: 50px auto;
+    padding: 40px 30px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.5);
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 35px;
+    color: #93c5fd;
+}
+
+input {
+    width: 80%;
+    max-width: 260px;
+    margin: 15px auto;
+    padding: 14px;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 12px;
+    outline: none;
+    border: 1.5px solid rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    transition: 0.25s ease;
+}
+
+input::placeholder {
+    color: #cbd5f5;
+}
+
+input:focus {
+    border-color: #38bdf8;
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.35);
+}
+
+button {
+    margin-top: 35px;
+    padding: 14px 30px;
+    border-radius: 14px;
+    border: none;
+    background: linear-gradient(135deg, #38bdf8, #6366f1);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 10px 25px rgba(56, 189, 248, 0.4);
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 40px rgba(99, 102, 241, 0.5);
+}
+
+button h2 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.loader {
+    width: 0;
+    height: 0;
+}
+
+    </style>
+</head>
+<body>
+    <div class="loader" id="loader"></div>
+    <h1>Let's check , are you fit or not ?😆</h1>
+   <div class="calculator">
+    <h3>Calculate your BMI</h3>
+    <input type="number" id="weight" placeholder="Weight..."><br>
+    <input type="number" id="height" placeholder="Height..."><br>
+
+    <button id="button"><h2 class="result">Click Here to see your BMI </h2></button>
+</div>
+   <script src="BMICalculator.js"></script>
+</body>
+</html>

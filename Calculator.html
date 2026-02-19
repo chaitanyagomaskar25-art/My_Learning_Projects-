@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+       
+
+body {
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background-color: #0f172a;
+}
+
+#container {
+    width: 500px;
+    height: 440px;
+    background: #1e293b;
+    margin: 100px auto;
+    outline: none;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 10px rgba(56, 189, 248, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #334155;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+#result {
+    width: 100%;
+    height: 120px;
+    background-color: #0f172a;
+    color: #f8fafc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 25px;
+    box-sizing: border-box;
+    text-align: right;
+}
+
+#userinput {
+    height: 40%;
+    font-size: 20px;
+    color: #94a3b8;
+    padding-top: 15px;
+    letter-spacing: 1px;
+}
+
+#output {
+    height: 60%;
+    font-size: 48px;
+    font-weight: 500;
+}
+
+#input {
+    display: flex;
+}
+
+#leftSide {
+    width: 80%;
+    border-right: 1px solid #334155;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%; 
+}
+
+#one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #zero, 
+#point, #square, #divide, #multiplication, #substract, #plus, #clearAll, #equalTo {
+    height: 80px;
+    text-align: center;
+    border: 0.2px solid #334155;
+    font-size: 24px;
+    padding-top: 22px; 
+    box-sizing: border-box;
+    cursor: pointer;
+    background-color: #1e293b;
+    color: #f1f5f9;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.second, .third {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+#clearAll {
+    color: #fb7185; 
+    font-weight: bold;
+}
+
+#plus, #multiplication, #substract, #divide, #square {
+    color: #38bdf8; 
+    background-color: #1e293b;
+}
+
+#equalTo {
+    background-color: #38bdf8 !important; 
+    color: #0f172a !important;
+    font-weight: 700;
+}
+
+#rightSide {
+    width: 20%;
+    text-align: center;
+    background-color: #1e293b;
+    color: #94a3b8;
+    padding-top: 150px;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#one:hover, #two:hover, #three:hover, #four:hover, #five:hover, 
+#six:hover, #seven:hover, #eight:hover, #nine:hover, #zero:hover, #point:hover {
+    background-color: #334155;
+    color: #ffffff;
+}
+
+#plus:hover, #multiplication:hover, #substract:hover, #divide:hover, #square:hover {
+    background-color: #0ea5e9;
+    color: white;
+}
+
+#clearAll:hover, #rightSide:hover {
+    background-color: #e11d48;
+    color: white;
+}
+
+#equalTo:hover {
+    background-color: #7dd3fc !important;
+    box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+#one:active, #two:active, #three:active, #four:active, #five:active, 
+#six:active, #seven:active, #eight:active, #nine:active, #zero:active, #equalTo:active {
+    transform: scale(0.95);
+    background-color: #000;
+}
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="result">
+            <div id="userinput"></div>
+            <div id="output"></div>
+        </div>
+        <div id="input">
+            <div id="leftSide">
+                <div id="seven">7</div>
+                <div id="eight">8</div>
+                <div id="nine">9</div>
+                <div id="clearAll" class="first">AC</div>
+                <div id="four">4</div>
+                <div id="five">5</div>
+                <div id="six">6</div>
+                <div class="second">
+                    <div id="plus">+</div>
+                <div id="multiplication">*</div>
+                </div>
+                
+                <div id="one">1</div>
+                <div id="two">2</div>
+                <div id="three">3</div>
+                <div class="third">
+                    <div id="substract">-</div>
+                <div id="divide">/</div>
+                </div>
+                
+                <div id="zero">0</div>
+                <div id="point">. </div>
+                <div id="square">^</div>
+                <div id="equalTo" class="fourth">=</div>
+            </div>
+            <div id="rightSide">DEL</div>
+        </div>
+    </div>
+    <script src="Calculator.js"></script>
+</body>
+</html>
