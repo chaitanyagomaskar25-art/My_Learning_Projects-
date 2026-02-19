@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Start Stop Animation</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: radial-gradient(circle at center, #1a1a2e 0%, #0a0a0c 100%);
+  overflow: hidden;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+.controls {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  padding: 15px 25px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  padding: 12px 28px;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border-radius: 30px;
+  border: none;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+#start {
+  background: #00d2ff;
+  color: #000;
+  box-shadow: 0 0 15px rgba(0, 210, 255, 0.3);
+}
+
+#stop {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.2);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+
+
+.large-circles,
+.small-shapes {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  animation-play-state: paused; 
+}
+
+.circle, .squircle {
+  border-top: 0.1em solid rgba(255,255,255,0.4);
+  height: 12.5em;
+  width: 12.5em;
+  position: absolute;
+}
+
+.circle {
+  border-radius: 50%;
+  box-shadow: 0 1em 2em rgba(0,0,0,0.5);
+  left: -6.25em;
+  top: -12.5em;
+  transform-origin: 50% 12.5em;
+}
+
+.one   { background: rgba(16,63,236,.75); transform: rotateZ(225deg); }
+.two   { background: rgba(37,172,162,.75); transform: rotateZ(180deg); }
+.three { background: rgba(233,124,32,.75); transform: rotateZ(135deg); }
+.four  { background: rgba(235,67,35,.75); transform: rotateZ(90deg); }
+.five  { background: rgba(190,28,65,.75); transform: rotateZ(45deg); }
+.six   { background: rgba(208,57,159,.75); transform: rotateZ(0); }
+.seven { background: rgba(150,32,198,.75); transform: rotateZ(-45deg); }
+.eight { background: rgba(95,33,203,.75); transform: rotateZ(-90deg); }
+
+.small {
+  width: 4em;
+  height: 4em;
+  left: -2em;
+  top: -15em;
+  transform-origin: 50% 15em;
+}
+
+.squircle { border-radius: 25%; }
+
+.small.squircle {
+  background: none;
+  border: none;
+}
+
+.small.squircle::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 25%;
+  transform: rotateZ(-45deg);
+  background: red;
+}
+
+.small.squircle.two::after   { background: rgba(37,172,162,.75); }
+.small.squircle.four::after  { background: rgba(235,67,35,.75); }
+.small.squircle.six::after   { background: rgba(208,57,159,.75); }
+.small.squircle.eight::after { background: rgba(95,33,203,.75); }
+
+.large-circles {
+  animation: spin 10s linear infinite;
+}
+
+.small-shapes {
+  animation: spin 30s linear infinite reverse;
+}
+
+@keyframes spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="large-circles" id="large">
+  <div class="circle one"></div>
+  <div class="circle two"></div>
+  <div class="circle three"></div>
+  <div class="circle four"></div>
+  <div class="circle five"></div>
+  <div class="circle six"></div>
+  <div class="circle seven"></div>
+  <div class="circle eight"></div>
+</div>
+
+<div class="small-shapes" id="small">
+  <div class="small circle one"></div>
+  <div class="small squircle two"></div>
+  <div class="small circle three"></div>
+  <div class="small squircle four"></div>
+  <div class="small circle five"></div>
+  <div class="small squircle six"></div>
+  <div class="small circle seven"></div>
+  <div class="small squircle eight"></div>
+</div>
+
+<div class="controls">
+  <button id="start">Start</button>
+  <button id="stop">Stop</button>
+</div>
+<script src="StartStopAnimation.js"></script>
+</body>
+</html>
+

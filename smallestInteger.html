@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smallest Integer Checker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        body {
+            background-color: #0f172a; 
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(245, 158, 11, 0.05) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(99, 102, 241, 0.05) 0px, transparent 50%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #f1f5f9;
+        }
+
+        .smallestInteger {
+            background: #1e293b; 
+            padding: 40px;
+            border-radius: 24px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border: 1px solid #334155;
+            text-align: center;
+        }
+
+        .smallestInteger h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: #f59e0b; 
+            letter-spacing: -0.02em;
+        }
+
+        #value1 {
+            width: 100%;
+            padding: 16px;
+            margin-bottom: 20px;
+            background: #0f172a;
+            border: 2px solid #334155;
+            border-radius: 12px;
+            color: #ffffff;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        #value1:focus {
+            border-color: #f59e0b;
+            box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.1);
+        }
+
+        #checkNum {
+            width: 100%;
+            padding: 16px;
+            font-size: 1rem;
+            font-weight: 600;
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: #0f172a;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-bottom: 24px;
+        }
+
+        #checkNum:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(245, 158, 11, 0.3);
+        }
+
+        #checkNum:active {
+            transform: translateY(0);
+        }
+
+        #result {
+            padding: 20px;
+            border-radius: 12px;
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid #334155;
+            font-size: 1rem;
+            color: #94a3b8;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s ease;
+        }
+
+        .highlight-num {
+            color: #f59e0b;
+            font-weight: 600;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="smallestInteger">
+        <h2>Integer Checker</h2>
+
+        <input type="number" id="value1" placeholder="Enter number">
+
+        <button id="checkNum">Check Smallest Integer</button>
+
+        <div id="result">Awaiting input...</div>
+    </div>
+
+    <script>
+        const number = document.getElementById("value1");
+        const result = document.getElementById("result");
+        const checkNum = document.getElementById("checkNum");
+
+        checkNum.addEventListener("click", () => {
+            const num = number.value;
+            
+            if (num === "") {
+                alert("Please enter a number");
+                return;
+            }
+
+            result.style.borderColor = "#f59e0b";
+            setTimeout(() => { result.style.borderColor = "#334155"; }, 500);
+
+            if (num % 2 === 0) {
+                result.innerHTML = `Result: <span class="highlight-num">${num}</span>`;
+            } else {
+                result.innerHTML = `Result: <span class="highlight-num">${2 * num}</span>`;
+            }
+            setTimeout(() => { 
+                result.innerHTML = "Awaiting input...";
+                number.value = "";
+             }, 5000);
+        });
+    </script>
+</body>
+</html>

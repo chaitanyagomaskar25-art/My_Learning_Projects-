@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login form</title>
+    <style>
+       body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(
+        120deg,
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.4)
+    ),
+    url('data:image/jpeg;base64,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');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+form {
+    width: 450px;
+    height: 420px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 25px;
+    padding: 35px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.7);
+    animation: fade 0.9s ease;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+form h1 {
+    font-size: 40px;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+input,
+button {
+    width: 90%;
+    margin: 18px auto;
+    padding: 14px;
+    font-size: 18px;
+    border-radius: 35px;
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.18);
+    color: #ffffff;
+    transition: 0.3s ease;
+}
+
+input::placeholder {
+    color: #dddddd;
+}
+
+input:focus {
+    box-shadow: 0 0 12px rgba(0, 191, 255, 0.8);
+}
+
+button {
+    width: 60%;
+    margin-top: 30px;
+    background: linear-gradient(135deg, #00f2fe, #4facfe);
+    color: #000;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(79, 172, 254, 0.7);
+}
+
+    </style>
+</head>
+<body>
+    <form action="" class="form" id="form">
+        <h1>Login</h1>
+        <input type="text" placeholder="Email ID" id="email">
+        <input type="password" id="password" placeholder="Enter password"maxlength="15">       
+         <button>Login</button>
+    </form>
+    <script src="LoginForm.js"></script>
+</body>
+</html>

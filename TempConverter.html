@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <style>
+       * {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+.container {
+    width: 420px;
+    padding: 40px 35px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+.heading {
+    font-size: 28px;
+    margin-bottom: 35px;
+    color: #f8fafc;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+}
+
+label {
+    display: inline-block;
+    width: 140px;
+    text-align: right;
+    margin-right: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #cbd5f5;
+}
+
+input {
+    width: 130px;
+    padding: 10px 12px;
+    margin: 12px 0;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    outline: none;
+    transition: 0.25s ease;
+}
+
+input::placeholder {
+    color: #c7d2fe;
+}
+
+input:focus {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.35);
+}
+
+#celsius {
+    margin-top: 5px;
+}
+
+#farenhit,
+#kelvin {
+    margin-left: 0;
+}
+
+.container::after {
+    content: "";
+    display: block;
+    margin-top: 30px;
+    height: 1px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(255,255,255,0.4),
+        transparent
+    );
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading">Temperature Converter</h1>
+        <label for="celsius">Celsius : </label>
+        <input type="number" id="celsius"><br>
+        <label for="farenhit">Fahrenheit : </label>
+        <input type="number" id="farenhit"><br>
+        <label for="kelvin">Kelvin : </label>
+        <input type="number" id="kelvin">
+    </div>
+    <script src="TempConverter.js"></script>
+</body>
+</html>

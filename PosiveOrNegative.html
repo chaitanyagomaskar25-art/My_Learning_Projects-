@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Number Analyzer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Professional Foundation */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #1c1e21;
+        }
+
+        /* Your original class: positiveOrNegativeOrZero */
+        .positiveOrNegativeOrZero {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e1e4e8;
+        }
+
+        .positiveOrNegativeOrZero h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: #1a73e8;
+            text-align: center;
+            letter-spacing: 0.5px;
+        }
+
+        /* Your original ID: value1 */
+        #value1 {
+            width: 100%;
+            padding: 12px 16px;
+            margin-bottom: 16px;
+            font-size: 1rem;
+            border: 1px solid #dadce0;
+            border-radius: 6px;
+            outline: none;
+            transition: all 0.2s ease-in-out;
+            background-color: #f8f9fa;
+        }
+
+        #value1:focus {
+            border-color: #1a73e8;
+            background-color: #ffffff;
+            box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
+        }
+
+        /* Your original ID: checkNum */
+        #checkNum {
+            width: 100%;
+            padding: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin-bottom: 20px;
+        }
+
+        #checkNum:hover {
+            background-color: #1557b0;
+        }
+
+        #checkNum:active {
+            transform: scale(0.99);
+        }
+
+        /* Your original ID: result */
+        #result {
+            padding: 16px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #4b5563;
+            background-color: #f9fafb;
+            border-radius: 6px;
+            border-left: 4px solid #1a73e8;
+            min-height: 54px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="positiveOrNegativeOrZero">
+        <h2>Number Analyzer</h2>
+
+        <input type="number" id="value1" placeholder="Enter any number">
+
+        <button id="checkNum">Analyze Number</button>
+
+        <div id="result">Awaiting input...</div>
+    </div>
+
+    <script>
+        const number = document.getElementById("value1");
+        const result = document.getElementById("result");
+        const checkNum = document.getElementById("checkNum");
+
+        checkNum.addEventListener("click", () => {
+            const numValue = number.value;
+            
+            if (numValue === "") {
+                alert("Please enter a valid number");
+                return;
+            }
+
+
+            if (numValue == 0) {
+                result.innerText = `The number ${numValue} is Zero`;
+                result.style.borderLeftColor = "#9ca3af"; 
+                result.style.color = "#9ca3af"; 
+            }
+            else if (numValue > 0) {
+                result.innerText = `The number ${numValue} is Positive`;
+                result.style.borderLeftColor = "#10b981"; 
+                result.style.color = "#10b981"; 
+
+            }
+            else {
+                result.innerText = `The number ${numValue} is Negative`;
+                result.style.borderLeftColor = "#ef4444";
+                result.style.color = "#ef4444";
+            }
+        });
+    </script>
+</body>
+</html>

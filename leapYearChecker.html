@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <div class="lepYear">
+        <h2>Leap Year Checker</h2>
+
+        <input type="number" id="year" placeholder="Enter first number">
+
+        <button id="checkYear">Check Number</button>
+
+        <div id="result">Your result will appear here</div>
+    </div>
+    <script>
+const y = document.getElementById("year");
+const result = document.getElementById("result");
+const checkYear = document.getElementById("checkYear");
+checkYear.addEventListener("click", () => {
+    const year = y.value;
+    if(year === ""){
+    alert("Enter year");
+}else if(year % 4 === 0){
+        if(year % 100 === 0){
+            if(year % 400 === 0){
+                result.innerHTML = `The year ${year} is Leap`
+            }
+            else{
+                result.innerHTML = `The year ${year} is not Leap`
+            }
+        }
+        else{
+            result.innerHTML = `The year ${year} is Leap`
+        }
+    }
+    else{
+        result.innerHTML = `The year ${year} is Leap`
+    }
+
+})
+
+    </script>
+        
+
+</body>
+</html>

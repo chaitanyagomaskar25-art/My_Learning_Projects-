@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Massege Adder</title>
+    <style>
+       * {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+.container {
+    width: 520px;
+    height: auto;
+    padding: 35px 30px;
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.35);
+    text-align: center;
+}
+
+h1 {
+    font-size: 26px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-top: 30px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #374151;
+}
+
+input {
+    width: 100%;
+    height: 46px;
+    padding: 10px 14px;
+    font-size: 15px;
+    border-radius: 10px;
+    border: 1.8px solid #d1d5db;
+    outline: none;
+    margin-bottom: 15px;
+    transition: 0.25s ease;
+}
+
+input::placeholder {
+    color: #9ca3af;
+}
+
+input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+button {
+    padding: 10px 26px;
+    margin: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background-color: #2563eb;
+    color: #ffffff;
+    transition: 0.25s ease;
+}
+
+button:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+textarea {
+    width: 100%;
+    height: 220px;
+    margin-top: 12px;
+    padding: 14px;
+    border-radius: 12px;
+    border: 1.8px solid #d1d5db;
+    font-size: 15px;
+    resize: none;
+    background-color: #f9fafb;
+    color: #111827;
+    line-height: 1.6;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+textarea:disabled {
+    opacity: 1;
+    color: #1f2937;
+}
+
+#refresh {
+    margin-top: 15px;
+    background-color: #6b7280;
+}
+
+#refresh:hover {
+    background-color: #4b5563;
+}
+
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Your Message Goes Here:</h1>
+        <input type="search" placeholder="Your Message" id="userText">
+        <button>Submit</button>
+        <h2>Your previous masseges</h2>
+        <textarea id="" disabled></textarea>
+        <button id="refresh">Refresh</button>
+    </div>
+    
+    <script src="MassegeAdder.js"></script>
+</body>
+</html>
